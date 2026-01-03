@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codename Dashboard</title>
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <!--Side Bar-->
+  <aside class="icon-bar">
+    <div class="brand-circle">C</div>
+    <button class="icon-btn" aria-label="Home">
+      <span class="icon-circle"><i class="bi bi-house"></i></span>
+    </button>
+    <button class="icon-btn" aria-label="Analytics">
+      <span class="icon-circle"><i class="bi bi-bar-chart"></i></span>
+    </button>
+    <button class="icon-btn" aria-label="Folders">
+      <span class="icon-circle"><i class="bi bi-folder"></i></span>
+    </button>
+    <button class="icon-btn" aria-label="Share">
+      <span class="icon-circle"><i class="bi bi-share"></i></span>
+    </button>
+    <div class="icon-bar-bottom">
+      <button class="icon-btn" aria-label="Settings">
+        <span class="icon-circle"><i class="bi bi-gear"></i></span>
+      </button>
+    </div>
+  </aside>
+  <aside class="sidebar">
+    <div class="sidebar-header clickable" id="sidebarHeader">
+      <span>Codename.com</span>
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="sidebar-menu" id="sidebarMenu">
+      <div class="menu-item clickable">
+        <i class="bi bi-star"></i> Starred
+      </div>
+      <div class="menu-item clickable">
+        <i class="bi bi-clock"></i> Recent
+      </div>
+      <div class="divider"></div>
+      <div class="menu-section">
+        <span>Sales list</span>
+        <i class="bi bi-plus menu-plus"></i>
+      </div>
+      <div class="menu-item clickable menu-bold">Goals</div>
+      <div class="menu-item clickable menu-bold">
+        Dashboard
+        <i class="bi bi-plus menu-plus"></i>
+      </div>
+      <div class="tree">
+        <div class="tree-item clickable">Codename</div>
+        <div class="tree-item clickable toggle" data-target="shared1">
+          Shared with me
+          <i class="bi bi-chevron-up small"></i>
+        </div>
+       <div class="tree-child" id="shared1">
+          <div class="tree-leaf clickable">Cargo2go <span class="badge-red">2</span></div>
+          <div class="tree-leaf clickable">Cloudz3r</div>
+          <div class="tree-leaf clickable">Idioma</div>
+          <div class="tree-leaf clickable">Syllables</div>
+          <div class="tree-leaf clickable">x-0b</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="menu-section">
+        <span>Reports</span>
+        <i class="bi bi-plus menu-plus"></i>
+      </div>
+      <div class="tree">
+        <div class="tree-item clickable toggle" data-target="report1">
+          Share with me
+          <i class="bi bi-chevron-up small"></i>
+        </div>
+        <div class="tree-child" id="report1">
+          <div class="tree-leaf clickable">Deals by user</div>
+          <div class="tree-leaf clickable">Deal duration</div>
+        </div>
+        <div class="tree-item clickable toggle" data-target="report2">
+          My reports
+          <i class="bi bi-chevron-up small"></i>
+        </div>
+        <div class="tree-child" id="report2">
+          <div class="tree-leaf clickable">Emails received</div>
+          <div class="tree-leaf clickable">Deal duration</div>
+          <div class="tree-leaf clickable red-text">New report</div>
+        </div>
+        <div class="tree-item clickable">
+          Analytics <span class="badge-red">7</span>
+        </div>
+      </div>
+      <div class="menu-footer clickable">
+        <i class="bi bi-folder-plus"></i>
+        Manage folders
+      </div>
+    </div>
+  </aside>
+
+  <!--Main-->
+  <main class="main">
+   <header class="top-bar">
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+  <i class="bi bi-list"></i>
+</button>
+      <div class="header-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder='Try searching "insights"' />
+      </div>
+      <div class="header-actions">
+        <button class="profile-pill">
+          <i class="bi bi-list"></i>
+          <img src="./images/scenery.webp"
+          alt="Profile"
+          />
+        </button>
+        <button class="header-plus" id="headerPlus">
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </header>
+
+ <!--Inner card-->
+    <section class="content-wrapper">
+        <div class="inner-top-row">
+         <div class="pill-group">
+          <button class="pill pill-plus">
+            <i class="bi bi-plus"></i>
+          </button>
+          <div class="pill pill-user">
+            <img src="./images/tanjiro.jpg" />
+            <span>Tanjiro K.</span>
+          </div>
+          <div class="pill pill-user">
+            <img src="./images/nezuko.png"/>
+            <span>Nezuko K.</span>
+          </div>
+          <div class="pill pill-user">
+            <img src="./images/muzan.jpg"/>
+            <span>Muzan K.</span>
+          </div>
+          <div class="pill pill-brand">C</div>
+        </div>
+        <div class="pill-actions">
+          <button class="pill pill-icon"><i class="bi bi-sliders"></i></button>
+          <button class="pill pill-icon"><i class="bi bi-download"></i></button>
+          <button class="pill pill-icon"><i class="bi bi-upload"></i></button>
+        </div>
+      </div>
+      <div class="content-inner">
+          <section class="revenue-header">
+            <!--left-->
+            <div class="revenue-left">
+              <h2 class="page-title">New report</h2>
+              <p class="label">Revenue</p>
+              <h1 class="revenue-amount">
+                <span class="amount">$528,976.82</span>
+                <span class="pill-pill red">
+                  ▲ 7.9%
+                </span>
+                <span class="pill-pill red">
+                  $27,335.09
+                </span>
+              </h1>
+              <p class="subtext-strong">
+                vs prev. $501,641.73
+                <span class="date-dropdown">
+                  Jun 1 – Aug 31, 2023 <i class="bi bi-chevron-down"></i>
+                </span>
+              </p>
+            </div>
+            <!--right-->
+             <div class="revenue-right">
+              <div class="timeframe">
+                <label class="switch">
+                  <input type="checkbox" id="timeframeToggle" checked />
+                  <span class="slider"></span>
+                </label>
+                <span class="timeframe-label">Timeframe</span>
+                <div class="date-dropdown-wrapper">
+                  <button class="date-pill" id="dateTrigger">
+                    Sep 1 – Nov 30, 2023
+                    <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="date-menu hidden" id="dateMenu">
+                    <div class="date-option">Jun 1 – Aug 31, 2023</div>
+                    <div class="date-option">Sep 1 – Nov 30, 2023</div>
+                    <div class="date-option">Dec 1 – Feb 28, 2024</div>
+                  </div>
+                </div>
+              </div>
+               <!--small cards-->
+                <div class="revenue-cards">
+                   <div class="mini-card card-rect">
+                    <p class="mini-label">Top sales</p>
+                    <h3>72</h3>
+                    <div class="top-footer">
+                      <div class="user-info">
+                        <img src="./images/muzan.jpg"/>
+                        <span><b>Muzan K.</b></span>
+                      </div>
+                      <button class="arrow-btn arrow-light">
+                        <i class="bi bi-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                 <div class="mini-card dark card-rect">
+                    <div class="mini-head">
+                      <span class="mini-label">Best deal</span>
+                      <button class="star-btn">
+                        <i class="bi bi-star"></i>
+                      </button>
+                    </div>
+                    <h3>$42,300</h3>
+                    <div class="deal-footer">
+                      <span class="deal-company">Rolf Inc.</span>
+                      <button class="arrow-btn">
+                        <i class="bi bi-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mini-card card-square">
+                    <p class="mini-label">Deals</p>
+                    <span class="pill gray">256</span>
+                    <p class="trend down">▼ 5</p>
+                  </div>
+                  <div class="mini-card outline active card-square">
+                    <p class="mini-label">Value</p>
+                    <span class="pill red">528k</span>
+                    <p class="trend up">▲ 7.9%</p>
+                  </div>
+                  <div class="mini-card outline card-square">
+                    <p class="mini-label">Win rate</p>
+                    <span class="pill gray">44%</span>
+                    <p class="trend up">▲ 1.2%</p>
+                  </div>
+                </div>
+              </div>
+     </section>
+
+<div class="summary-row">
+ <div class="summary-pill">
+    <div class="summary-item">
+      <img src="./images/tanjiro.jpg"/>
+      <span class="amount">$209,633</span>
+      <span class="percent">39.63%</span>
+    </div>
+    <div class="summary-item">
+      <img src="./images/muzan.jpg"/>
+      <span class="amount">$156,841</span>
+      <span class="percent">29.65%</span>
+    </div>
+    <div class="summary-item">
+      <img src="./images/nezuko.png"/>
+      <span class="amount">$117,115</span>
+      <span class="percent">22.14%</span>
+    </div>
+  <div class="summary-logo">C</div>
+  <span class="amount">$45,386</span>
+  <span class="percent">8.58%</span>
+  </div>
+ <button class="details-pill">Details</button>
+</div>
+
+<!--Dashboard-->
+<section class="dashboard-grid">
+<div class="dashboard-row">
+  <!--Left-->
+  <div class="dashboard-left">
+<div class="analytics-cards">
+  <div class="analytics-card">
+    <div class="analytics-card-header">
+      <button class="icon icon-horizontal" type="button" data-menu="header">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button class="filter-btn" type="button" data-menu="filter">
+        Filters
+        <span class="caret"></span>
+      </button>
+    </div>
+    <ul class="platform-list">
+      <li class="platform-row">
+        <div class="platform-left">
+          <img src="./images/dribbble.avif" alt="Dribbble">
+          <span class="platform">Dribbble</span>
+        </div>
+        <div class="platform-right">
+          <span class="value">$227,459</span>
+          <span class="percent-pill">43%</span>
+        </div>
+      </li>
+      <li class="platform-row">
+        <div class="platform-left">
+          <img src="./images/insta.jpg" alt="Instagram">
+          <span class="platform">Instagram</span>
+        </div>
+        <div class="platform-right">
+          <span class="value">$142,823</span>
+          <span class="percent-pill">27%</span>
+        </div>
+      </li>
+      <li class="platform-row">
+        <div class="platform-left">
+          <img src="./images/be.png" alt="Behance">
+          <span class="platform">Behance</span>
+        </div>
+        <div class="platform-right">
+          <span class="value">$89,935</span>
+          <span class="percent-pill">11%</span>
+        </div>
+      </li>
+      <li class="platform-row">
+        <div class="platform-left">
+          <img src="./images/google.avif" alt="Google">
+          <span class="platform">Google</span>
+        </div>
+        <div class="platform-right">
+          <span class="value">$37,028</span>
+          <span class="percent-pill">7%</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- Right-->
+  <div class="analytics-card">
+    <div class="analytics-card-header">
+      <button class="icon icon-vertical" type="button" data-menu="header">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button class="filter-btn" type="button" data-menu="filter">
+        Filters
+        <span class="caret"></span>
+      </button>
+    </div>
+    <div class="chart-block">
+      <div class="bar-chart">
+        <div class="bar half-shaded" style="--bar-height: 90%">
+          <div class="bar-content">
+            <img src="./images/be.png"/>
+          </div>
+        </div>
+        <div class="bar" style="--bar-height: 120%">
+          <div class="bar-content">
+            <img src="./images/dribbble.avif" />
+          </div>
+        </div>
+        <div class="bar" style="--bar-height: 80%">
+          <div class="bar-content">
+            <img src="./images/google.avif" />
+          </div>
+        </div>
+        <div class="bar" style="--bar-height: 60%">
+          <div class="bar-content">
+            <img src="./images/insta.jpg" />
+          </div>
+        </div>
+        <div class="bar full-shaded" style="--bar-height: 110%">
+          <div class="bar-content">
+            <img src="./images/other.jpg" />
+          </div>
+        </div>
+      </div>
+      <p class="chart-label">
+        Deals amount<br />
+        <button class="label-dropdown" type="button" data-menu="label">
+          by referrer category
+          <span class="label-caret"></span>
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="deal-metrics-wrap">
+  <div class="deal-metrics-card">
+    <div class="deal-metrics-header">
+      <div class="deal-metrics-title">
+        <img src="./images/dribbble.avif" alt="Dribbble">
+        <div>
+          <span class="deal-metrics-subtitle">Platform value</span>
+          <button class="deal-metrics-select" type="button" data-menu="platform">
+           Dribbble
+          <span class="deal-metrics-caret"></span>
+          </button>
+        </div>
+      </div>
+      <div class="deal-metrics-tabs">
+        <button class="deal-metrics-tab active">Revenue</button>
+        <button class="deal-metrics-tab">Leads</button>
+        <button class="deal-metrics-tab">W/L</button>
+      </div>
+    </div>
+    <div class="deal-metrics-body">
+      <!--left-->
+      <div class="deal-metrics-panel">
+        <div class="deal-metrics-item">
+          <span>Revenue</span>
+          <strong>$18,552</strong>
+        </div>
+        <div class="deal-metrics-item">
+          <span>Leads</span>
+          <strong>373 <small>97/276</small></strong>
+        </div>
+        <div class="deal-metrics-item">
+          <span>Win / lose</span>
+          <strong>16% <small>51/318</small></strong>
+        </div>
+        <div class="deal-metrics-vertical-label">Average monthly</div>
+      </div>
+      <!--graph-->
+      <div class="deal-metrics-graph">
+        <div class="deal-metrics-axis">
+          <span>$14,500</span>
+          <span>$11,000</span>
+          <span>$7,500</span>
+          <span>$4,000</span>
+        </div>
+
+  <div class="deal-metrics-months">
+  <div class="deal-metrics-month">
+    <div class="deal-metrics-columns">
+      <div class="deal-metrics-col striped" style="height: 55%">
+        <span class="deal-metrics-value">$6,901</span>
+      </div>
+      <div class="deal-metrics-col solid" style="height: 40%"></div>
+      <div class="deal-metrics-col solid light" style="height: 30%"></div>
+    </div>
+    <div class="deal-metrics-avatars">
+      <img src="./images/tanjiro.jpg"/>
+      <img src="./images/muzan.jpg"/>
+      <img src="./images/nezuko.png"/>
+    </div>
+    <span class="deal-metrics-month-label">Sep</span>
+  </div>
+
+   <div class="deal-metrics-month">
+    <div class="deal-metrics-columns">
+      <div class="deal-metrics-col striped" style="height: 80%">
+        <span class="deal-metrics-value">$11,035</span>
+      </div>
+      <div class="deal-metrics-col solid" style="height: 60%"></div>
+      <div class="deal-metrics-col solid light" style="height: 40%"></div>
+    </div>
+    <div class="deal-metrics-avatars">
+      <img src="./images/tanjiro.jpg"/>
+      <img src="./images/muzan.jpg"/>
+      <img src="./images/nezuko.png"/>
+    </div>
+    <span class="deal-metrics-month-label">Oct</span>
+  </div>
+
+  <div class="deal-metrics-month">
+    <div class="deal-metrics-columns">
+      <div class="deal-metrics-col striped" style="height: 65%">
+        <span class="deal-metrics-value">$9,288</span>
+      </div>
+      <div class="deal-metrics-col solid" style="height: 44%"></div>
+      <div class="deal-metrics-col solid light" style="height: 55%"></div>
+    </div>
+    <div class="deal-metrics-avatars">
+      <img src="./images/tanjiro.jpg"/>
+      <img src="./images/muzan.jpg"/>
+      <img src="./images/nezuko.png"/>
+    </div>
+    <span class="deal-metrics-month-label">Nov</span>
+  </div>
+</div>
+     </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+<!--Right big card-->
+<div class="dashboard-right">
+  <section class="right-big-card">
+    <div class="right-columns">
+      <span>Sales</span>
+      <span>Revenue</span>
+      <span>Leads</span>
+      <span>KPI</span>
+      <span>W / L</span>
+    </div>
+    <div class="right-row">
+      <div class="row-user">
+        <img src="./images/tanjiro.jpg">
+        <span>Tanjiro K.</span>
+      </div>
+      <div class="row-revenue">$209,633</div>
+      <div class="row-leads">
+        <span class="count dark">41</span>
+        <span class="count light">118</span>
+      </div>
+      <div class="row-kpi">0.84</div>
+     <div class="row-wl">
+        <span class="row-revenue">31%</span>
+        <span class="count dark">12</span>
+        <span class="count light">29</span>
+      </div>
+    </div>
+    <div class="right-row-block">
+      <div class="right-row">
+        <div class="row-user">
+          <img src="./images/muzan.jpg">
+          <span>Muzan K.</span>
+        </div>
+        <div class="row-revenue">$156,841</div>
+        <div class="row-leads">
+          <span class="count dark">54</span>
+          <span class="count light">103</span>
+        </div>
+        <div class="row-kpi">0.89</div>
+        <div class="row-wl">
+          <span class="row-revenue">39%</span>
+          <span class="count dark">21</span>
+          <span class="count light">33</span>
+          <button class="expand-btn">▼</button>
+        </div>
+      </div>
+      <div class="right-gradient-card">
+<div class="gradient-content">
+  <div class="gradient-tags">
+    <span class="gradient-tag">Top sales 💪</span>
+    <span class="gradient-tag">Sales streak 🔥</span>
+    <span class="gradient-tag">Top review 👍</span>
+  </div>
+<div class="platform-header">
+  <span class="platform-title">Work with platforms</span>
+  <div class="platform-stats">
+    <span class="platform-pill arrow-pill">▲ 3</span>
+    <span class="platform-pill value-pill">$156,841</span>
+  </div>
+</div>
+<div class="platforms-rect">
+  <div class="platforms-left">
+    <div class="platform-title">
+      <img src="./images/dribbble.avif" alt="">
+      <span>Dribbble</span>
+    </div>
+    <div class="platform-main-value">
+      <strong>45.3%</strong>
+      <span>$71,048</span>
+    </div>
+  </div>
+<div class="platforms-right">
+  <div class="platforms-right-top">
+<div class="mini-card instagram-card">
+  <div class="instagram-inner">
+    <div class="mini-title">
+      <img src="./images/insta.jpg">
+      Instagram
+    </div>
+    <div class="mini-value">
+      <strong>28.1%</strong>
+      <span>$44,072</span>
+    </div>
+  </div>
+</div>
+    <div class="platforms-right-stack">
+      <div class="mini-card-google">
+        <div class="mini-title">
+          <img src="./images/googlet.jpg">
+          Google
+        </div>
+        <div class="mini-value">
+          <strong>14.1%</strong>
+          <span>$22,114</span>
+        </div>
+      </div>
+      <div class="mini-middle-pill">
+        <img src="./images/medium.png">
+       <div class="mini-value"> 
+        <strong>5.4%</strong>
+        <span>$8,469</span>
+      </div>
+      </div>
+    </div>
+  </div>
+ <div class="mini-bottom-pill">
+    <img src="./images/other.jpg">
+    Other
+    <div class="mini-value">
+    <strong>7.1%</strong>
+    <span>$11,135</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="sales-dynamic">
+ <div class="sales-dynamic-header">
+    <h4>Sales dynamic</h4>
+    <button class="graph-expand">↗</button>
+  </div>
+  <div class="week-labels">
+    <span>W1</span>
+    <span>W3</span>
+    <span>W5</span>
+    <span>W7</span>
+    <span>W9</span>
+    <span>W11</span>
+  </div>
+<div class="graph-wrapper">
+  <svg viewBox="0 0 600 140" class="graph-svg" preserveAspectRatio="none">
+    <g class="grid">
+      <line x1="100" y1="10" x2="100" y2="120"/>
+      <line x1="200" y1="10" x2="200" y2="120"/>
+      <line x1="300" y1="10" x2="300" y2="120"/>
+      <line x1="400" y1="10" x2="400" y2="120"/>
+      <line x1="500" y1="10" x2="500" y2="120"/>
+    </g>
+    <path
+      d="M0 65
+         C60 55, 120 60, 180 58
+         S300 70, 360 68
+         S480 62, 600 60"
+      class="line-secondary"/>
+    <path
+      d="M0 75
+         C60 85, 120 60, 180 62
+         S300 95, 360 80
+         S480 70, 600 55"
+      class="line-main"/>
+    <line x1="0" y1="120" x2="600" y2="120" class="baseline"/>
+    <line x1="0"   y1="120" x2="200" y2="120" class="base-red"/>
+    <line x1="200" y1="120" x2="400" y2="120" class="base-yellow"/>
+    <line x1="400" y1="120" x2="600" y2="120" class="base-green"/>
+      <g class="marker" data-type="up" transform="translate(180,120)">
+        <circle r="11"/>
+        <clipPath id="clip-up">
+          <circle r="8"/>
+        </clipPath>
+        <image
+          href="./images/be.png"
+          x="-8"
+          y="-8"
+          width="16"
+          height="16"
+          clip-path="url(#clip-up)"
+          class="marker-img"
+        />
+        <circle cx="6" cy="-6" r="5" class="badge-bg"/>
+        <text x="6" y="-3" class="badge-text">↑</text>
+      </g>
+      <g class="marker" data-type="down" transform="translate(320,120)">
+        <circle r="11"/>
+        <clipPath id="clip-down">
+          <circle r="8"/>
+        </clipPath>
+        <image
+          href="./images/dribbble.avif"
+          x="-8"
+          y="-8"
+          width="16"
+          height="16"
+          clip-path="url(#clip-down)"
+          class="marker-img"
+        />
+        <circle cx="6" cy="-6" r="5" class="badge-bg"/>
+        <text x="6" y="-3" class="badge-text">↓</text>
+      </g>
+      <g class="marker" data-type="star" transform="translate(560,120)">
+        <circle r="11"/>
+        <clipPath id="clip-star">
+          <circle r="8"/>
+        </clipPath>
+        <image
+          href="./images/muzan.jpg"
+          x="-8"
+          y="-8"
+          width="16"
+          height="16"
+          clip-path="url(#clip-star)"
+          class="marker-img"
+        />
+        <circle cx="6" cy="-6" r="5" class="badge-bg"/>
+        <text x="6" y="-3" class="badge-text">★</text>
+      </g>
+ </svg>
+</div>
+</div>
+   </div>
+       </div>
+    </div>
+    <div class="right-row">
+      <div class="row-user">
+        <img src="./images/nezuko.png">
+        <span>Eren Y.</span>
+      </div>
+      <div class="row-revenue">$117,115</div>
+      <div class="row-leads">
+        <span class="count dark">22</span>
+        <span class="count light">84</span>
+      </div>
+      <div class="row-kpi">0.79</div>
+      <div class="row-wl">
+        <span class="row-revenue">32%</span>
+        <span class="count dark">7</span>
+        <span class="count light">15</span>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+</section>
+</div>
+</section>
+  </main>
+</div>
+<script src="./bootstrap/bootstrap.bundle.min.js"></script>
+<script src="dashboard.js"></script>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+</body>
+</html>
