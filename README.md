@@ -49,5 +49,5 @@ index.html      → Dashboard entry point
 
 ## 🖼 Screenshot
 
-![Dashboard UI](screenshots/Dashboard.png)
+![Dashboard UI](screenshots/dashboard.png)
 
