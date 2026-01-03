@@ -43,3 +43,11 @@ images/         → Images and icons used in the UI
 dashboard.css   → Main dashboard styling
 dashboard.js    → JavaScript for interactions
 index.html      → Dashboard entry point
+```
+
+---
+
+## 🖼 Screenshot
+
+![Dashboard UI](screenshots/Dashboard.png)
+
